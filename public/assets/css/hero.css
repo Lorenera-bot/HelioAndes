@@ -1,0 +1,13 @@
+.titulo {
+    font-weight: 700;
+    color: darkslategrey;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.sub-titulo {
+    font-weight: 500;
+    color:grey;
+    margin-bottom: 2rem;
+
+}

@@ -1,0 +1,50 @@
+/* Navbar.css */
+
+/* Cambia el fondo del navbar (sobrescribe el color de Bootstrap si lo deseas) */
+.navbar-custom {
+  background-color: white; /* Azul Bootstrap */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajusta el logo y texto del brand */
+.navbar-custom .navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-custom .navbar-brand img {
+  width: 50px;
+  height: auto;
+}
+
+/* Enlaces del menú */
+.navbar-custom .nav-link {
+  color:darkgray !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #fff !important;
+}
+
+/* Dropdown */
+.navbar-custom .dropdown-menu {
+  background-color: #004085;
+  border: none;
+}
+
+.navbar-custom .dropdown-item {
+  color: #fff;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: #0b5ed7;
+}
+
+.App {
+  background-color:rgb(240, 247, 255);
+}
