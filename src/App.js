@@ -8,28 +8,28 @@ import NavbarPrincipal from './components/navbar';
 import Hero from './components/hero';
 import Footer from './components/footer';
 import Servicios from './components/servicios';
-
+import Soluciones from './components/Soluciones';
+import CalculadoraIntegral from './components/CalculadoraIntegral';
 
 function App() {
   return (
- <div className="App">     
-    <NavbarPrincipal/>
-      
+    <div className="App">
+
       <div className="App">
-        
-        <div className='container'>    
+        <NavbarPrincipal />
+        <div className='container'>
 
-          <Hero/>  
-          <Servicios/>
+          <Hero />
+          <Servicios />
+          <Soluciones />
+    <CalculadoraIntegral />
 
 
 
-              
-          
         </div>
-        
+
       </div>
-      <Footer/>  
+      <Footer />
     </div>
   );
 }
