@@ -86,10 +86,12 @@ function CalculadoraIntegral() {
     const totalFinal = totalAntesFinanciar + interesTotal;
 
     return (
+        
         <div className='container mt-4'>
             <div className='row'>
                 <div className='col-12'>
-                    <h2 className="titulo-destacado mb-4">DEMO calculadora</h2>
+                    <h2 className="titulo-destacado mb-4" style={{textAlign : 'left'}}>DEMO calculadora</h2>
+                    <p className='parrafo-calcularora' style={{textAlign : 'right'}}>Maquetado de formulario y resumen.(Sin logica JS en este mockup).</p>
                 </div>
             </div>
 
@@ -320,79 +322,96 @@ function CalculadoraIntegral() {
                 </div>
 
                 <div className='col-lg-6'>
-                    <h4>Resumen</h4>
+                    <h4 >Resumen</h4>
 
-                    <Table striped bordered hover>
+                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Concepto</th>
                                 <th>Valor</th>
                             </tr>
                         </thead>
                         <tbody>
+                        
                             <tr>
-                                <td>1</td>
                                 <td>Potencia estimada (kW)</td>
-                                <td>{isNaN(potenciaEstimadaKw) || potenciaEstimadaKw === 0 ? '---' : potenciaEstimadaKw.toFixed(2)}</td>
+                                <td>{isNaN(potenciaEstimadaKw) || potenciaEstimadaKw === 0 ? '' : potenciaEstimadaKw.toFixed(2)}</td>
                             </tr>
+
                             <tr>
-                                <td>2</td>
                                 <td>Subtotal equipos</td>
-                                <td>{isNaN(subtotalEquipos) || subtotalEquipos === 0 ? '---' : `$${subtotalEquipos.toLocaleString()}`}</td>
+                                <td>{isNaN(subtotalEquipos) || subtotalEquipos === 0 ? '' : `$${subtotalEquipos.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>Instalacion base</td>
+                                <td>{isNaN(instalacionBase) || instalacionBase === 0 ? '' : `$${instalacionBase.toLocaleString()}`}</td>
+                            </tr>
+
+                        
+                            <tr>
                                 <td>Recargo techo</td>
-                                <td>{isNaN(recargoTecho) || recargoTecho === 0 ? '---' : `$${recargoTecho.toLocaleString()}`}</td>
+                                <td>{isNaN(recargoTecho) || recargoTecho === 0 ? '' : `$${recargoTecho.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>Recargo complejidad</td>
+                                <td>{isNaN(recargoComplejidad) || recargoComplejidad === 0 ? '' : `$${recargoComplejidad.toLocaleString()}`}</td>
+                            </tr>
+                            <tr>
+                                <td>Instalacion final</td>
+                                <td>{isNaN(instalacionFinal) || instalacionFinal === 0 ? '' : `$${instalacionFinal.toLocaleString()}`}</td>
+                            </tr>
+                            <tr>
                                 <td>Subsidio</td>
-                                <td>{isNaN(subsidioValor) || subsidioValor === 0 ? '---' : `-$${Math.abs(subsidioValor).toLocaleString()}`}</td>
+                                <td>{isNaN(subsidioValor) || subsidioValor === 0 ? '' : `-$${Math.abs(subsidioValor).toLocaleString()}`}</td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Base imponible</td>
+                                <td>{isNaN(baseImponible) || baseImponible === 0 ? '' : `$${baseImponible.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>5</td>
-                                <td>Instalación final</td>
-                                <td>{isNaN(instalacionFinal) || instalacionFinal === 0 ? '---' : `$${instalacionFinal.toLocaleString()}`}</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
                                 <td>IVA 19%</td>
-                                <td>{isNaN(iva) || iva === 0 ? '---' : `$${iva.toLocaleString()}`}</td>
+                                <td>{isNaN(iva) || iva === 0 ? '' : `$${iva.toLocaleString()}`}</td>
                             </tr>
+
+                            
                             <tr>
-                                <td>7</td>
                                 <td>Envío</td>
-                                <td>{isNaN(costoEnvioFinal) || costoEnvioFinal === 0 ? '---' : `$${costoEnvioFinal.toLocaleString()}`}</td>
+                                <td>{isNaN(costoEnvioFinal) || costoEnvioFinal === 0 ? '' : `$${costoEnvioFinal.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>8</td>
                                 <td>Garantía</td>
-                                <td>{isNaN(costoGarantia) || costoGarantia === 0 ? '---' : `$${costoGarantia.toLocaleString()}`}</td>
+                                <td>{isNaN(costoGarantia) || costoGarantia === 0 ? '' : `$${costoGarantia.toLocaleString()}`}</td>
                             </tr>
-                            <tr className='table-warning'>
-                                <td colSpan={2}>Total antes de financiar</td>
-                                <td><strong>{isNaN(totalAntesFinanciar) || totalAntesFinanciar === 0 ? '---' : `$${totalAntesFinanciar.toLocaleString()}`}</strong></td>
+
+                            <tr className='table-info'>
+                                <td><strong>Total antes de financiar</strong></td>
+                                <td><strong>{isNaN(totalAntesFinanciar) || totalAntesFinanciar === 0 ? '' : `$${totalAntesFinanciar.toLocaleString()}`}</strong></td>
                             </tr>
+
                             <tr>
-                                <td>9</td>
                                 <td>Pie</td>
-                                <td>{isNaN(pieCalculado) || pieCalculado === 0 ? '---' : `$${pieCalculado.toLocaleString()}`}</td>
+                                <td>{isNaN(pieCalculado) || pieCalculado === 0 ? '' : `$${pieCalculado.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>10</td>
-                                <td>Interés total</td>
-                                <td>{isNaN(interesTotal) || interesTotal === 0 ? '---' : `$${interesTotal.toLocaleString()}`}</td>
+                                <td>Monto a financiar</td>
+                                <td>{isNaN(montoFinanciar) || montoFinanciar === 0 ? '' : `$${montoFinanciar.toLocaleString()}`}</td>
                             </tr>
                             <tr>
-                                <td>11</td>
-                                <td>Cuota</td>
-                                <td>{plan.cuotas > 1 ? (isNaN(cuota) || cuota === 0 ? '---' : `$${cuota.toLocaleString()}`) : '---'}</td>
+                                <td>Interes total</td>
+                                <td>{isNaN(interesTotal) || interesTotal === 0 ? '' : `$${interesTotal.toLocaleString()}`}</td>
                             </tr>
-                            <tr className='table-success'>
-                                <td colSpan={2}>Total final</td>
-                                <td><strong>{isNaN(totalFinal) || totalFinal === 0 ? '---' : `$${totalFinal.toLocaleString()}`}</strong></td>
+                            {plan.cuotas > 1 && (
+                                <tr>
+                                    <td>Cuota ({plan.cuotas} meses)</td>
+                                    <td>{isNaN(cuota) || cuota === 0 ? '' : `$${cuota.toLocaleString()}`}</td>
+                                </tr>
+                            )}
+
+                            <tr className='table-primary'>
+                                <td><strong>TOTAL FINAL</strong></td>
+                                <td><strong>{isNaN(totalFinal) || totalFinal === 0 ? '' : `$${totalFinal.toLocaleString()}`}</strong></td>
                             </tr>
                         </tbody>
                     </Table>
