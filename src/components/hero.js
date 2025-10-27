@@ -17,7 +17,7 @@ function Hero() {
 
             {/* Botones de acción */}
             <div className="d-flex justify-content-center justify-content-md-start gap-3">
-              <a href="#CalculadoraIntegral" className="btn btn-info btn-lg">
+              <a href="#demo-calculadora" className="btn btn-info btn-lg">
                 Ver DEMO
               </a>
               <a href="./assets/catalogo.pdf" className="btn btn-light btn-lg" target="_blank" rel="noopener noreferrer">

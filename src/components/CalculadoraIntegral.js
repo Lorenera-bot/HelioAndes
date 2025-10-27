@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table';
 
 function CalculadoraIntegral() {
@@ -62,6 +63,22 @@ function CalculadoraIntegral() {
 
     const ivaPorcentaje = 0.19; // 19% IVA
 
+    // Función para validar que no sea negativo
+    const manejarCambioPesoEnvio = (e) => {
+        const valor = parseInt(e.target.value) || 0;
+        if (valor >= 0) {
+            setPesoEnvio(valor);
+        }
+        // Si es negativo, no hace nada (mantiene el valor anterior)
+    }
+
+    // Función reutilizable para otros campos que no deberían ser negativos
+    const manejarCambioNumeroPositivo = (establecedor) => (e) => {
+        const valor = parseInt(e.target.value) || 0;
+        if (valor >= 0) {
+            establecedor(valor);
+        }
+    }
     // Calculos
     const potenciaEstimadaKw = ((parseInt(potenciaDelPanel) || 0) * (parseInt(cantidadDePaneles) || 0)) / 1000;
     const subtotalEquipos = (parseInt(inversor) || 0) + ((parseInt(bateria) || 0) * (parseInt(cantidadBaterias) || 0)) + (parseInt(estructuraCableado) || 0);
@@ -85,13 +102,33 @@ function CalculadoraIntegral() {
     const cuota = plan.cuotas > 1 ? (montoFinanciar + interesTotal) / plan.cuotas : 0;
     const totalFinal = totalAntesFinanciar + interesTotal;
 
+    // Función para reiniciar el formulario
+    const reiniciarFormulario = () => {
+        setPotenciaDelPanel('');
+        setCantidadDePaneles('');
+        setInversor('');
+        setBateria('');
+        setCantidadBaterias('');
+        setEstructuraCableado('');
+        setInstalacionBase('');
+        setPesoEnvio('');
+        setTipoDeTecho('');
+        setRegion('');
+        setComplejidadInstalacion('');
+        setSubsidio('');
+        setMetodoDeEnvio('');
+        setGarantia('');
+        setPlanDePago('');
+        setTipoDePie('');
+        setValorDePie('');
+    };
     return (
-        
-        <div className='container mt-4'>
+
+        <div className='container mt-4' id='demo-calculadora'>
             <div className='row'>
                 <div className='col-12'>
-                    <h2 className="titulo-destacado mb-4" style={{textAlign : 'left'}}>DEMO calculadora</h2>
-                    <p className='parrafo-calcularora' style={{textAlign : 'right'}}>Maquetado de formulario y resumen.(Sin logica JS en este mockup).</p>
+                    <h2 className="titulo-destacado mb-4" style={{ textAlign: 'left' }}>DEMO calculadora</h2>
+                    <p className='parrafo-calcularora' style={{ textAlign: 'right' }}>Maquetado de formulario y resumen.(Sin logica JS en este mockup).</p>
                 </div>
             </div>
 
@@ -185,8 +222,9 @@ function CalculadoraIntegral() {
                                 type='number'
                                 className='form-control'
                                 value={pesoEnvio}
-                                onChange={(e) => setPesoEnvio(e.target.value)}
+                                onChange={manejarCambioNumeroPositivo(setPesoEnvio)}
                                 placeholder='90'
+                                min={0}
                             />
                         </div>
                     </div>
@@ -310,7 +348,7 @@ function CalculadoraIntegral() {
                     <div className='row'>
                         <div className='col-12 mb-3'>
                             <label className='form-label'>Valor de pie</label>
-                      <input
+                            <input
                                 type='number'
                                 className='form-control'
                                 value={valorDePie}
@@ -318,13 +356,25 @@ function CalculadoraIntegral() {
                                 placeholder={tipoDePie === 'porcentaje' ? '10' : '100000'}
                             />
                         </div>
+                        <div>
+                            <Button variant="primary"
+                                size="sm"
+                                active
+                                onClick={reiniciarFormulario}
+                                className="me-2">
+                                Reiniciar
+                            </Button>
+                            <Button variant="secondary" size="sm" active>
+                                Copiar resumen
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
                 <div className='col-lg-6'>
                     <h4 >Resumen</h4>
 
-                     <Table striped bordered hover>
+                    <Table striped bordered hover>
                         <thead>
                             <tr>
                                 <th>Concepto</th>
@@ -332,93 +382,94 @@ function CalculadoraIntegral() {
                             </tr>
                         </thead>
                         <tbody>
-                        
+
                             <tr>
                                 <td>Potencia estimada (kW)</td>
-                                <td>{isNaN(potenciaEstimadaKw) || potenciaEstimadaKw === 0 ? '' : potenciaEstimadaKw.toFixed(2)}</td>
+                                <td>{isNaN(potenciaEstimadaKw) || potenciaEstimadaKw === 0 ? '$---' : potenciaEstimadaKw.toFixed(2)}</td>
                             </tr>
 
                             <tr>
                                 <td>Subtotal equipos</td>
-                                <td>{isNaN(subtotalEquipos) || subtotalEquipos === 0 ? '' : `$${subtotalEquipos.toLocaleString()}`}</td>
+                                <td>{isNaN(subtotalEquipos) || subtotalEquipos === 0 ? '$---' : `$${subtotalEquipos.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Instalacion base</td>
-                                <td>{isNaN(instalacionBase) || instalacionBase === 0 ? '' : `$${instalacionBase.toLocaleString()}`}</td>
+                                <td>{isNaN(instalacionBase) || instalacionBase === 0 ? '$---' : `$${instalacionBase.toLocaleString()}`}</td>
                             </tr>
 
-                        
+
                             <tr>
                                 <td>Recargo techo</td>
-                                <td>{isNaN(recargoTecho) || recargoTecho === 0 ? '' : `$${recargoTecho.toLocaleString()}`}</td>
+                                <td>{isNaN(recargoTecho) || recargoTecho === 0 ? '$---' : `$${recargoTecho.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Recargo complejidad</td>
-                                <td>{isNaN(recargoComplejidad) || recargoComplejidad === 0 ? '' : `$${recargoComplejidad.toLocaleString()}`}</td>
+                                <td>{isNaN(recargoComplejidad) || recargoComplejidad === 0 ? '$---' : `$${recargoComplejidad.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Instalacion final</td>
-                                <td>{isNaN(instalacionFinal) || instalacionFinal === 0 ? '' : `$${instalacionFinal.toLocaleString()}`}</td>
+                                <td>{isNaN(instalacionFinal) || instalacionFinal === 0 ? '$---' : `$${instalacionFinal.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Subsidio</td>
-                                <td>{isNaN(subsidioValor) || subsidioValor === 0 ? '' : `-$${Math.abs(subsidioValor).toLocaleString()}`}</td>
+                                <td>{isNaN(subsidioValor) || subsidioValor === 0 ? '$---' : `-$${Math.abs(subsidioValor).toLocaleString()}`}</td>
                             </tr>
 
-                            
+
                             <tr>
                                 <td>Base imponible</td>
-                                <td>{isNaN(baseImponible) || baseImponible === 0 ? '' : `$${baseImponible.toLocaleString()}`}</td>
+                                <td>{isNaN(baseImponible) || baseImponible === 0 ? '$---' : `$${baseImponible.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>IVA 19%</td>
-                                <td>{isNaN(iva) || iva === 0 ? '' : `$${iva.toLocaleString()}`}</td>
+                                <td>{isNaN(iva) || iva === 0 ? '$---' : `$${iva.toLocaleString()}`}</td>
                             </tr>
 
-                            
+
                             <tr>
                                 <td>Envío</td>
-                                <td>{isNaN(costoEnvioFinal) || costoEnvioFinal === 0 ? '' : `$${costoEnvioFinal.toLocaleString()}`}</td>
+                                <td>{isNaN(costoEnvioFinal) || costoEnvioFinal === 0 ? '$---' : `$${costoEnvioFinal.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Garantía</td>
-                                <td>{isNaN(costoGarantia) || costoGarantia === 0 ? '' : `$${costoGarantia.toLocaleString()}`}</td>
+                                <td>{isNaN(costoGarantia) || costoGarantia === 0 ? '$---' : `$${costoGarantia.toLocaleString()}`}</td>
                             </tr>
 
-                            <tr className='table-info'>
+                            <tr>
                                 <td><strong>Total antes de financiar</strong></td>
-                                <td><strong>{isNaN(totalAntesFinanciar) || totalAntesFinanciar === 0 ? '' : `$${totalAntesFinanciar.toLocaleString()}`}</strong></td>
+                                <td><strong>{isNaN(totalAntesFinanciar) || totalAntesFinanciar === 0 ? '$---' : `$${totalAntesFinanciar.toLocaleString()}`}</strong></td>
                             </tr>
 
                             <tr>
                                 <td>Pie</td>
-                                <td>{isNaN(pieCalculado) || pieCalculado === 0 ? '' : `$${pieCalculado.toLocaleString()}`}</td>
+                                <td>{isNaN(pieCalculado) || pieCalculado === 0 ? '$---' : `$${pieCalculado.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Monto a financiar</td>
-                                <td>{isNaN(montoFinanciar) || montoFinanciar === 0 ? '' : `$${montoFinanciar.toLocaleString()}`}</td>
+                                <td>{isNaN(montoFinanciar) || montoFinanciar === 0 ? '$---' : `$${montoFinanciar.toLocaleString()}`}</td>
                             </tr>
                             <tr>
                                 <td>Interes total</td>
-                                <td>{isNaN(interesTotal) || interesTotal === 0 ? '' : `$${interesTotal.toLocaleString()}`}</td>
+                                <td>{isNaN(interesTotal) || interesTotal === 0 ? '$---' : `$${interesTotal.toLocaleString()}`}</td>
                             </tr>
                             {plan.cuotas > 1 && (
                                 <tr>
                                     <td>Cuota ({plan.cuotas} meses)</td>
-                                    <td>{isNaN(cuota) || cuota === 0 ? '' : `$${cuota.toLocaleString()}`}</td>
+                                    <td>{isNaN(cuota) || cuota === 0 ? '$---' : `$${cuota.toLocaleString()}`}</td>
                                 </tr>
                             )}
 
-                            <tr className='table-primary'>
+                            <tr className='table-info'>
                                 <td><strong>TOTAL FINAL</strong></td>
-                                <td><strong>{isNaN(totalFinal) || totalFinal === 0 ? '' : `$${totalFinal.toLocaleString()}`}</strong></td>
+                                <td><strong>{isNaN(totalFinal) || totalFinal === 0 ? '$---' : `$${totalFinal.toLocaleString()}`}</strong></td>
                             </tr>
                         </tbody>
                     </Table>
                 </div>
             </div>
+            <br></br>
         </div>
     );
-} 
+}
 
 export default CalculadoraIntegral;

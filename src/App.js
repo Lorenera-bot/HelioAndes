@@ -10,6 +10,7 @@ import Footer from './components/footer';
 import Servicios from './components/servicios';
 import Soluciones from './components/Soluciones';
 import CalculadoraIntegral from './components/CalculadoraIntegral';
+import Planes from './components/Planes'; 
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           <Hero />
           <Servicios />
           <Soluciones />
-    <CalculadoraIntegral />
-
+          <CalculadoraIntegral />
+          <Planes />
 
 
         </div>

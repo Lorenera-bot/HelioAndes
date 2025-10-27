@@ -26,7 +26,7 @@ function Servicios() {
 
   return (
     <section className="servicios-section">
-      <div className="container">
+      <div className="container" id="servicios">
         <h1 className="servicios-title">Servicios</h1>
         <p className style={{textAlign:'right',color: "gray"}}>Estudio energetico, instalacion certificada, monitoreo y mantencion.</p>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">

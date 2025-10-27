@@ -14,10 +14,10 @@ function NavbarPrincipal() {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto">
-                                <Nav.Link href="#home">Inicio</Nav.Link>
-                                <Nav.Link href="#link">Servicios</Nav.Link>
-                                <Nav.Link href="#link">Soluciones</Nav.Link>
-                                <Nav.Link href="#link">DEMO</Nav.Link>
+                                <Nav.Link href="#inicio">Inicio</Nav.Link>
+                                <Nav.Link href="#servicios">Servicios</Nav.Link>
+                                <Nav.Link href="#soluciones">Soluciones</Nav.Link>
+                                <Nav.Link href="#demo-calculadora">DEMO</Nav.Link>
                                 <Nav.Link href="#link">Planes</Nav.Link>
                                 <Nav.Link href="#link">Testimonios</Nav.Link>
                                 <Nav.Link href="#link">FAQ</Nav.Link>
