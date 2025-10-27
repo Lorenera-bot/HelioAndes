@@ -1,0 +1,75 @@
+/* Estilos personalizados para complementar Bootstrap */
+.acordion-container {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.acordion-title {
+  font-weight: 700;
+  color: darkslategrey;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.pregunta-frecuente {
+  text-align: right;
+  color: gray;
+  margin-bottom: 2rem;
+}
+
+.acordion {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  transform: translateY(-5px);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+/* Estilos para los items del acordeón */
+.acordion .accordion-item {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los headers del acordeón */
+.acordion .accordion-header {
+  margin: 0;
+}
+
+.acordion .accordion-button {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+  padding: 1.5rem;
+  background-color: white;
+}
+
+.acordion .accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: darkslategrey;
+  box-shadow: none;
+}
+
+.acordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+/* Estilos para el cuerpo del acordeón */
+.acordion .accordion-body {
+  color: #6c757d;
+  line-height: 1.6;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
