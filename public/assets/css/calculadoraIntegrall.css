@@ -12,40 +12,12 @@
     text-align: center;
 
 }
-/* Versión Minimalista */
+
 #demo-calculadora {
   font-family: 'Arial', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-}
-
-#demo-calculadora h2 {
-  color: #333;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: left;
-  font-weight: bold;
-}
-
-#demo-calculadora h4 {
-  color: #444;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-#demo-calculadora .parrafo-calcularora {
-  color: #666;
-  text-align: right;
-  font-size: 0.85rem;
-  margin-bottom: 2rem;
-}
-
-#demo-calculadora .form-label {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
 }
 
 #demo-calculadora .form-control,
@@ -74,5 +46,5 @@
 }
 
 #demo-calculadora .table-info {
-  background-color: #e7f3ff !important;
+  background-color: #e7f3ff;
 }

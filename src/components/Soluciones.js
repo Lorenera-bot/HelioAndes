@@ -3,14 +3,17 @@ import React from "react";
 function Soluciones() {
   const soluciones = [
     {
+      icono: <i className="fa-regular fa-house"></i>,
       titulo: "Hogar 3-5 kW",
       descripcion: "Balance ideal entre costo y ahorro mensual."
     },
     {
+      icono: <i className="fa-solid fa-shop"></i>,
       titulo: "PyME 10-20 kW",
       descripcion: "Para operacion diurna con buena irradiacion."
     },
     {
+      icono: <i className="fa-solid fa-toolbox"></i>,
       titulo: "Off-grid con baterias",
       descripcion: "Autonomia en zonas sin red electrica."
     }
@@ -26,6 +29,9 @@ function Soluciones() {
             <div key={index} className="col">
               <div className="card solucion-card h-100">
                 <div className="card-body">
+                     <div className="solucion-icono mb-3">
+                    {solucion.icono}
+                  </div>
                   <h5 className="card-title">{solucion.titulo}</h5>
                   <p className="card-text">{solucion.descripcion}</p>
                 </div>
