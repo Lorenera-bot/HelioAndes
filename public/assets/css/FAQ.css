@@ -2,15 +2,16 @@
 .acordion-container {
   padding: 4rem 0;
   background-color: #f8f9fa;
+  
 }
 
 .acordion-title {
   font-weight: 700;
   color: darkslategrey;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   text-align: left;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   font-weight: 600;
 }
 
