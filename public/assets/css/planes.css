@@ -1,5 +1,5 @@
 .planes-grid-container {
-  width: 100%;
+  width: 100%;color: darkslategrey;
   padding: 0 15px;
   margin: 0 auto;
   max-width: 1200px;
@@ -16,6 +16,13 @@
     padding: 4rem 0;
     background-color: #f8f9fa;
 }
+
+.plan-titulo-btn {
+  background-color: #e6f3ff; 
+  color: darkslategrey;
+}
+
+
 /* Descripciones personalizadas */
 .planes-card .card-text {
     color: #6c757d;

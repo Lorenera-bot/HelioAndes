@@ -73,7 +73,7 @@ function Planes() {
               </div>
               <br></br>
               
-              <Button variant="primary" className="plan-boton mt-auto">
+              <Button variant="primary" className="btn btn-info btn-lg">
                 {plan.boton}
               </Button>
             </Card.Body>

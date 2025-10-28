@@ -20,7 +20,7 @@ function Hero() {
               <a href="#demo-calculadora" className="btn btn-info btn-lg">
                 Ver DEMO
               </a>
-              <a href="./assets/catalogo.pdf" className="btn btn-light btn-lg" target="_blank" rel="noopener noreferrer">
+              <a href="./assets/catalogo.pdf" className="btn btn-light btn-lg btn-catalogo" target="_blank" rel="noopener noreferrer">
                 Descargar Catálogo
               </a>
             </div>

@@ -11,3 +11,10 @@
     margin-bottom: 2rem;
 
 }
+
+.btn-catalogo {
+  border: 2px solid grey;     
+  color: #333;                
+  background-color: #f8f9fa;  
+  transition: all 0.3s ease;  
+}

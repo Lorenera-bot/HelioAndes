@@ -363,7 +363,7 @@ function CalculadoraIntegral() {
                                     size="sm"
                                     active
                                     onClick={reiniciarFormulario}
-                                    className="me-2">
+                                    className="btn btn-info btn-lg">
                                     Reiniciar
                                 </Button>
                                 <Button variant="secondary" size="sm" active>
