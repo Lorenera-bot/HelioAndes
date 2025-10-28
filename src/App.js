@@ -10,19 +10,18 @@ import Footer from './components/footer';
 import Servicios from './components/servicios';
 import Soluciones from './components/Soluciones';
 import CalculadoraIntegral from './components/CalculadoraIntegral';
-import Planes from './components/Planes'; 
-import Testimonios from './components/Testimonios'; 
-import Faq from './components/FAQ'; 
-import Contacto from './components/Contacto'; 
+import Planes from './components/Planes';
+import Testimonios from './components/Testimonios';
+import Faq from './components/FAQ';
+import Contacto from './components/Contacto';
 
 
 
 function App() {
   return (
     <div className="App">
-
+      <NavbarPrincipal />
       <div className="App">
-        <NavbarPrincipal />
         <div className='container'>
 
           <Hero />
