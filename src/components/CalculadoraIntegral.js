@@ -63,14 +63,6 @@ function CalculadoraIntegral() {
 
     const ivaPorcentaje = 0.19; // 19% IVA
 
-    // Funcion para validar que no sea negativo
-    const manejarCambioPesoEnvio = (e) => {
-        const valor = parseInt(e.target.value) || 0;
-        if (valor >= 0) {
-            setPesoEnvio(valor);
-        }
-        // Si es negativo, no hace nada (mantiene el valor anterior)
-    }
 
     // Funcion reutilizable para otros campos que no deberian ser negativos
     const manejarCambioNumeroPositivo = (establecedor) => (e) => {
@@ -145,7 +137,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={potenciaDelPanel}
-                                    onChange={(e) => setPotenciaDelPanel(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setPotenciaDelPanel)}
                                     placeholder='450'
                                 />
                             </div>
@@ -155,7 +147,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={cantidadDePaneles}
-                                    onChange={(e) => setCantidadDePaneles(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setCantidadDePaneles)}
                                     placeholder='9'
                                 />
                             </div>
@@ -168,7 +160,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={inversor}
-                                    onChange={(e) => setInversor(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setInversor)}
                                     placeholder='650000'
                                 />
                             </div>
@@ -178,7 +170,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={bateria}
-                                    onChange={(e) => setBateria(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setBateria)}
                                     placeholder='320000'
                                 />
                             </div>
@@ -191,7 +183,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={cantidadBaterias}
-                                    onChange={(e) => setCantidadBaterias(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setCantidadBaterias)}
                                     placeholder='1'
                                 />
                             </div>
@@ -201,7 +193,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={estructuraCableado}
-                                    onChange={(e) => setEstructuraCableado(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setEstructuraCableado)}
                                     placeholder='180000'
                                 />
                             </div>
@@ -214,7 +206,7 @@ function CalculadoraIntegral() {
                                     type='number'
                                     className='form-control'
                                     value={instalacionBase}
-                                    onChange={(e) => setInstalacionBase(e.target.value)}
+                                    onChange={manejarCambioNumeroPositivo(setInstalacionBase)}
                                     placeholder='350000'
                                 />
                             </div>

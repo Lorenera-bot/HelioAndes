@@ -1,12 +1,11 @@
 /* Navbar.css */
 
-/* Cambia el fondo del navbar (sobrescribe el color de Bootstrap si lo deseas) */
+
 .navbar-custom {
-  background-color: white; /* Azul Bootstrap */
+  background-color: white; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajusta el logo y texto del brand */
 .navbar-custom .navbar-brand {
   font-weight: bold;
   font-size: 1.2rem;
@@ -49,3 +48,9 @@
   background-color:rgb(240, 247, 255);
   
 }
+
+
+.navbar-custom .navbar-toggler-icon {
+    filter: invert(1); 
+}
+

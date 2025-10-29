@@ -36,7 +36,7 @@ function Servicios() {
             <div key={index} className="col">
               <div className="card servicio-card h-100">
                 <div className="card-body text-center">
-                  {/* Aquí se renderiza el icono */}
+                  
                   <div className="servicio-icono mb-3">
                     {servicio.icono}
                   </div>

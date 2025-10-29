@@ -5,7 +5,7 @@ import './App.css';
 
 
 import NavbarPrincipal from './components/navbar';
-import Hero from './components/hero';
+import Hero from './components/hero.js';
 import Footer from './components/footer';
 import Servicios from './components/servicios';
 import Soluciones from './components/Soluciones';

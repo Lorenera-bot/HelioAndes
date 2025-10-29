@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function Contacto() {
   return (
     <div className="contacto-wrapper">
-        <h1 className="contacto-titulo">   Contacto</h1>
+        <h1 className="contacto-titulo">Contacto</h1>
         <p  style={{textAlign:'right', color: "gray"}}>Cuentanos tu proyecto y agenda una asesoria.</p>
       <div className="contacto-container">
         <div className="contacto-content">
